@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- BOOTSTRAP 5  -->
+        <link rel="stylesheet" href="assets/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- GOOGLE FONTS:POPPINS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+        <title>Sistem Informasi Penerbangan</title>
+    </head>
+    <body>
+        <!-- REGISTER/LOGIN -->
+        <div class="container-fluid">
+            <div class="row vh-100 align-items-center">
+                <div class="col-12 col-lg-6 order-last order-lg-first py-5 py-lg-0">
+                    <div class="container d-flex justify-content-center">
+                        <div class="col-12 col-lg-8">
+                            <div class="d-flex flex-column">
+                                <h1 class="heading fw-bold">My Flight Status</h1>
+                                <h4 class="sub-heading mt-3 text-secondary">Welcome! Enter your flight number and ticket</h4>
+                            </div>
+
+                            <!-- FORM -->
+                            <form class="mt-4">
+                                <div class="mb-3">
+                                    <label for="inputFlightNumber" class="form-label">Flight Number</label>
+                                    <input type="email" class="form-control" id="inputFlightNumber" aria-describedby="emailHelp" />
+                                </div>
+                                <div class="mb-5">
+                                    <label for="inputTicketBooking" class="form-label">Ticket Booking Code</label>
+                                    <input type="password" class="form-control" id="inputTicketBooking" />
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary fw-bold w-100 py-3">Sign in</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content col-12 col-lg-6 d-flex align-items-center order-first order-lg-last h-100 bg-purple">
+                    <img class="img-fluid" src="assets/images/airport.svg" alt="Informasi Penerbangan" />
+                </div>
+            </div>
+        </div>
+        <!-- BOOTSTRAP JS -->
+        <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    </body>
+</html>

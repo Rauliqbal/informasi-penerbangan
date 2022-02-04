@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-purple {
+  background-color: #a0b7fb;
+}
+
+@media (max-width: 768px) {
+  .image-content {
+    height: auto !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
