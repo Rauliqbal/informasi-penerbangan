@@ -57,5 +57,5 @@ document.getElementById("submit-form").addEventListener("click", function () {
     var forms = document.getElementById("forms");
     forms.classList.remove("form");
     forms.innerHTML =
-        '<div class="welcome"><div class="content"><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg><a href="../index.html" class="btn btn-danger">Sign Out</a><span>Thanks you soon!</span><div></div>';
+        '<div class="welcome"><div class="content"><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg><span>Thanks you soon!</span><a href="../index.html" class="btn btn-danger mt-4">Sign Out</a><div></div>';
 });
