@@ -19,18 +19,6 @@ input {
   height: 50px;
 }
 
-.width-50 {
-  width: 50%;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.text-center {
-  text-align: center;
-}
-
 .progressbar {
   position: relative;
   display: -webkit-box;
@@ -98,7 +86,7 @@ input {
 }
 
 .form {
-  width: 500px;
+  width: 600px;
   border-radius: 10px !important;
   overflow: hidden;
   padding: 1.5rem;
@@ -156,7 +144,9 @@ input {
   gap: 1.5rem;
 }
 
-.btn {
+.btn-next,
+.btn-prev,
+.btn-submit {
   padding: 10px;
   display: block;
   background-color: #f1f1f1;
@@ -167,7 +157,9 @@ input {
   transition: 0.3s;
 }
 
-.btn:hover {
+.btn-next:hover,
+.btn-prev:hover,
+.btn-submit:hover {
   -webkit-box-shadow: 0 2px 24px rgba(0, 0, 0, 0.13);
           box-shadow: 0 2px 24px rgba(0, 0, 0, 0.13);
 }

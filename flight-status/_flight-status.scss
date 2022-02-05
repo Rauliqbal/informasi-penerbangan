@@ -18,18 +18,6 @@ input {
     height: 50px;
 }
 
-.width-50 {
-    width: 50%;
-}
-
-.ml-auto {
-    margin-left: auto;
-}
-
-.text-center {
-    text-align: center;
-}
-
 .progressbar {
     position: relative;
     display: flex;
@@ -85,7 +73,7 @@ input {
 }
 
 .form {
-    width: 500px;
+    width: 600px;
     border-radius: 10px !important;
     overflow: hidden;
     padding: 1.5rem;
@@ -125,7 +113,9 @@ input {
     gap: 1.5rem;
 }
 
-.btn {
+.btn-next,
+.btn-prev,
+.btn-submit {
     padding: 10px;
     display: block;
     background-color: $bg-secondary;
