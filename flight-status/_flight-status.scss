@@ -1,114 +1,240 @@
-@import "../css/colors";
-
-body {
-    background: #eee;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-h1 {
-    text-align: center;
+label {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 input {
-    padding: 10px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
-    border: 1px solid #aaaaaa;
-}
-
-input.invalid {
-    background-color: #ffdddd;
-}
-
-.tab {
-    display: none;
-}
-
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-}
-
-.icon {
-    font-size: 32px;
-}
-
-.step.active {
-    opacity: 1;
-}
-
-.step.finish {
-    background-color: #4caf50;
-}
-
-.all-steps {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.thanks-message {
-    display: none;
-}
-
-.container {
     display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    height: 50px;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.progressbar {
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+}
 
-    input[type="radio"] {
-        position: absolute;
+.progressbar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: 1;
+}
+
+.progress {
+    width: 0%;
+    transition: 0.3s;
+}
+
+.progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.progress-step-active {
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+}
+
+.form {
+    width: 500px;
+    border-radius: 10px !important;
+    overflow: hidden;
+    padding: 1.5rem;
+    background-color: #fff;
+    padding: 20px 30px;
+}
+
+.step-forms {
+    display: none;
+    transform-origin: top;
+    animation: animate 1s;
+}
+
+.step-forms-active {
+    display: block;
+}
+
+.group-inputs {
+    margin: 1rem 0;
+}
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
         opacity: 0;
-        cursor: pointer;
     }
 
-    &:hover input ~ .checkmark {
-        background-color: #ccc;
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
     }
+}
+
+.btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 10px;
+    display: block;
+    background-color: $bg-secondary;
+    color: $text-secondary;
+    text-align: center;
+    border-radius: 0.25rem;
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.13);
+    }
+}
+
+.progress-step-check {
+    position: relative;
+    background-color: green !important;
+    transition: all 0.8s;
+}
+
+.progress-step-check::before {
+    position: absolute;
+    content: "\2713";
+    width: 100%;
+    height: 100%;
+    top: 8px;
+    left: 13px;
+    font-size: 12px;
+}
+
+.group-inputs {
+    position: relative;
+}
+
+.group-inputs label {
+    font-size: 13px;
+    position: absolute;
+    height: 19px;
+    padding: 4px 7px;
+    top: -14px;
+    left: 10px;
+    color: #a2a2a2;
+    background-color: white;
+}
+
+.welcome {
+    height: 450px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-}
-
-.container input:checked ~ .checkmark {
-    background-color: #2196f3;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.container input:checked ~ .checkmark:after {
     display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
 }
 
-.container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #7ac142;
+    }
 }

@@ -1,130 +1,61 @@
-//your javascript goes here
-var currentTab = 0;
-document.addEventListener("DOMContentLoaded", function (event) {
-    showTab(currentTab);
+const prevBtns = document.querySelectorAll(".btn-prev");
+const nextBtns = document.querySelectorAll(".btn-next");
+const progress = document.getElementById("progress");
+const formSteps = document.querySelectorAll(".step-forms");
+const progressSteps = document.querySelectorAll(".progress-step");
+
+let formStepsNum = 0;
+
+nextBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        formStepsNum++;
+        updateFormSteps();
+        updateProgressbar();
+    });
 });
 
-function showTab(n) {
-    var x = document.getElementsByClassName("tab");
-    x[n].style.display = "block";
-    if (n == 0) {
-        document.getElementById("prevBtn").style.display = "none";
-    } else {
-        document.getElementById("prevBtn").style.display = "inline";
-    }
-    if (n == x.length - 1) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
-    } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-    }
-    fixStepIndicator(n);
-}
-
-function nextPrev(n) {
-    var x = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
-    x[currentTab].style.display = "none";
-    currentTab = currentTab + n;
-    if (currentTab >= x.length) {
-        // document.getElementById("regForm").submit();
-        // return false;
-        //alert("sdf");
-        document.getElementById("nextprevious").style.display = "none";
-        document.getElementById("all-steps").style.display = "none";
-        document.getElementById("register").style.display = "none";
-        document.getElementById("text-message").style.display = "block";
-    }
-    showTab(currentTab);
-}
-
-function validateForm() {
-    var x,
-        y,
-        i,
-        valid = true;
-    x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
-    for (i = 0; i < y.length; i++) {
-        if (y[i].value == "") {
-            y[i].className += " invalid";
-            valid = false;
-        }
-    }
-    if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
-    }
-    return valid;
-}
-function fixStepIndicator(n) {
-    var i,
-        x = document.getElementsByClassName("step");
-    for (i = 0; i < x.length; i++) {
-        x[i].className = x[i].className.replace(" active", "");
-    }
-    x[n].className += " active";
-}
-//your javascript goes here
-var currentTab = 0;
-document.addEventListener("DOMContentLoaded", function (event) {
-    showTab(currentTab);
+prevBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        formStepsNum--;
+        updateFormSteps();
+        updateProgressbar();
+    });
 });
 
-function showTab(n) {
-    var x = document.getElementsByClassName("tab");
-    x[n].style.display = "block";
-    if (n == 0) {
-        document.getElementById("prevBtn").style.display = "none";
-    } else {
-        document.getElementById("prevBtn").style.display = "inline";
-    }
-    if (n == x.length - 1) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
-    } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-    }
-    fixStepIndicator(n);
+function updateFormSteps() {
+    formSteps.forEach((formStep) => {
+        formStep.classList.contains("step-forms-active") && formStep.classList.remove("step-forms-active");
+    });
+
+    formSteps[formStepsNum].classList.add("step-forms-active");
 }
 
-function nextPrev(n) {
-    var x = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
-    x[currentTab].style.display = "none";
-    currentTab = currentTab + n;
-    if (currentTab >= x.length) {
-        // document.getElementById("regForm").submit();
-        // return false;
-        //alert("sdf");
-        document.getElementById("nextprevious").style.display = "none";
-        document.getElementById("all-steps").style.display = "none";
-        document.getElementById("register").style.display = "none";
-        document.getElementById("text-message").style.display = "block";
-    }
-    showTab(currentTab);
-}
-
-function validateForm() {
-    var x,
-        y,
-        i,
-        valid = true;
-    x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
-    for (i = 0; i < y.length; i++) {
-        if (y[i].value == "") {
-            y[i].className += " invalid";
-            valid = false;
+function updateProgressbar() {
+    progressSteps.forEach((progressStep, idx) => {
+        if (idx < formStepsNum + 1) {
+            progressStep.classList.add("progress-step-active");
+        } else {
+            progressStep.classList.remove("progress-step-active");
         }
-    }
-    if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
-    }
-    return valid;
+    });
+    progressSteps.forEach((progressStep, idx) => {
+        if (idx < formStepsNum) {
+            progressStep.classList.add("progress-step-check");
+        } else {
+            progressStep.classList.remove("progress-step-check");
+        }
+    });
 }
-function fixStepIndicator(n) {
-    var i,
-        x = document.getElementsByClassName("step");
-    for (i = 0; i < x.length; i++) {
-        x[i].className = x[i].className.replace(" active", "");
-    }
-    x[n].className += " active";
-}
+document.getElementById("submit-form").addEventListener("click", function () {
+    progressSteps.forEach((progressStep, idx) => {
+        if (idx <= formStepsNum) {
+            progressStep.classList.add("progress-step-check");
+        } else {
+            progressStep.classList.remove("progress-step-check");
+        }
+    });
+    var forms = document.getElementById("forms");
+    forms.classList.remove("form");
+    forms.innerHTML =
+        '<div class="welcome"><div class="content"><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg><a href="../index.html" class="btn btn-danger">Sign Out</a><span>Thanks you soon!</span><div></div>';
+});
