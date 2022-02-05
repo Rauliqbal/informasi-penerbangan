@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- BOOTSTRAP 5  -->
+        <link rel="stylesheet" href="../assets/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css" />
+
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="../css/style.css" />
+
+        <!-- GOOGLE FONTS:POPPINS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+        <title>Sistem Informasi Penerbangan</title>
+    </head>
+    <body>
+        <div class="d-flex justify-content-center align-items-center">
+            <form id="regForm">
+                <div class="hero vh-100 d-flex justify-content-center align-items-center">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="all-steps d-none" id="all-steps">
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                    <span class="step"></span>
+                                </div>
+
+                                <div class="tab">
+                                    <h2 class="heading mb-3 text-center">My Flight Status</h2>
+                                    <h6 class="sub-heading mb-4 text-muted text-center">Your flight data information</h6>
+
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Nama penumpang</td>
+                                                <td>: John Doe</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nama maskapai</td>
+                                                <td>: Lion air</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kode penerbangan</td>
+                                                <td>: RF10945</td>
+                                            </tr>
+                                            <tr>
+                                                <td>No tiket</td>
+                                                <td>: 1234567</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rute penerbangan</td>
+                                                <td>: Jakarta - Surabaya</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rute penerbangan</td>
+                                                <td>: Soekarno Hatta - Juanda</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hari, tanggal keberangkatan</td>
+                                                <td>: sabtu 05 Feb</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Waktu keberangkatan</td>
+                                                <td>: 15:30</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="tab">
+                                    <h2 class="heading mb-3 text-center">My Flight Status</h2>
+                                    <h6 class="sub-heading mb-4 text-muted text-center">Your flight data information</h6>
+
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Check in</td>
+                                                <td>: 00:00 - 00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Boarding</td>
+                                                <td>: 00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Take Off</td>
+                                                <td>: 00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>On Flight</td>
+                                                <td>: 00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Landing</td>
+                                                <td>: 00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="mt-4" id="nextprevious">
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                        <button class="btn btn-primary" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab">
+                            <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email" /></p>
+                            <p>
+                                Exp Month
+                                <select id="month">
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                            </p>
+                            <p>
+                                Exp Year
+                                <select id="year">
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </p>
+                            <p><input placeholder="CVV" oninput="this.className = ''" name="phone" /></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thanks-message text-center" id="text-message">
+                    <h3>Thanks for your Donation!</h3>
+                    <span>Your donation has been entered! We will contact you shortly!</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- STATUS PENERBANGAN
+        
+        </div> -->
+
+        <!-- BOOTSTRAP JS -->
+        <script src="../assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="../flight-status/script.js"></script>
+    </body>
+</html>

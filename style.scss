@@ -1,3 +1,6 @@
+@import "./css/colors";
+@import "./flight-status/flight-status";
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +14,11 @@ body {
 
 .bg-purple {
     background-color: #a0b7fb;
+}
+
+.sub-heading {
+    font-size: 22px;
+    color: $text-secondary;
 }
 
 @media (max-width: 768px) {
