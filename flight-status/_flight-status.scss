@@ -73,8 +73,7 @@ input {
 }
 
 .form {
-    width: 100%;
-    max-width: 600px;
+    width: 800px;
     border-radius: 10px !important;
     overflow: hidden;
     padding: 1.5rem;
@@ -114,9 +113,12 @@ input {
     gap: 1.5rem;
 }
 
+.btn-danger {
+    padding: 10px;
+}
+
 .btn-next,
-.btn-prev,
-.btn-submit {
+.btn-prev {
     padding: 10px;
     display: block;
     background-color: $bg-secondary;
@@ -230,14 +232,18 @@ input {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
     .form {
         width: 100%;
         max-width: 340px;
         border-radius: 10px !important;
-        overflow: hidden;
-        padding: 1.5rem;
         background-color: #fff;
         padding: 20px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        width: 500px;
     }
 }
