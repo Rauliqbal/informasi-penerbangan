@@ -17,10 +17,13 @@ body {
 }
 
 .sub-heading {
-    font-size: 22px;
+    font-size: 18px;
     color: $text-secondary;
 }
 
+.form-label {
+    font-size: 18px;
+}
 @media (max-width: 768px) {
     .image-content {
         height: auto !important;
