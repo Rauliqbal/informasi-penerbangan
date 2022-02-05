@@ -33,6 +33,10 @@ input.invalid {
   opacity: 0.5;
 }
 
+.icon {
+  font-size: 32px;
+}
+
 .step.active {
   opacity: 1;
 }
@@ -70,6 +74,10 @@ input.invalid {
   cursor: pointer;
 }
 
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
 .checkmark {
   position: absolute;
   top: 0;
@@ -78,10 +86,6 @@ input.invalid {
   width: 25px;
   background-color: #eee;
   border-radius: 50%;
-}
-
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
 }
 
 .container input:checked ~ .checkmark {
@@ -123,6 +127,10 @@ body {
   background-color: #a0b7fb;
 }
 
+.bg-secondary {
+  background-color: #e9e9e9 !important;
+}
+
 .sub-heading {
   font-size: 18px;
   color: #858080;
@@ -135,6 +143,9 @@ body {
 @media (max-width: 768px) {
   .image-content {
     height: auto !important;
+  }
+  h5 {
+    font-size: 16px;
   }
 }
 /*# sourceMappingURL=style.css.map */

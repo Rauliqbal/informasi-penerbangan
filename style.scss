@@ -13,7 +13,11 @@ body {
 }
 
 .bg-purple {
-    background-color: #a0b7fb;
+    background-color: $bg-purple;
+}
+
+.bg-secondary {
+    background-color: $bg-secondary !important;
 }
 
 .sub-heading {
@@ -27,5 +31,9 @@ body {
 @media (max-width: 768px) {
     .image-content {
         height: auto !important;
+    }
+
+    h5 {
+        font-size: 16px;
     }
 }

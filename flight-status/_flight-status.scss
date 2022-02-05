@@ -35,6 +35,10 @@ input.invalid {
     opacity: 0.5;
 }
 
+.icon {
+    font-size: 32px;
+}
+
 .step.active {
     opacity: 1;
 }
@@ -64,12 +68,16 @@ input.invalid {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
 
-.container input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
 }
 
 .checkmark {
@@ -80,10 +88,6 @@ input.invalid {
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
-}
-
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
 }
 
 .container input:checked ~ .checkmark {

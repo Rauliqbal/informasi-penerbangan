@@ -12,6 +12,9 @@
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="../css/style.css" />
 
+        <!-- BOXICONS -->
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+
         <!-- GOOGLE FONTS:POPPINS -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +38,7 @@
 
                                 <div class="tab">
                                     <h2 class="heading mb-3 text-center">My Flight Status</h2>
-                                    <h6 class="sub-heading mb-4 text-muted text-center">Your flight data information</h6>
+                                    <h6 class="sub-heading mb-4 text-capitalize text-center">Your flight data information</h6>
 
                                     <table class="table">
                                         <tbody>
@@ -56,11 +59,11 @@
                                                 <td>1234567</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-secondary text-uppercase fw-bold">Rute penerbangan</td>
+                                                <td class="text-secondary text-uppercase fw-bold">Rute penerbangan (Kota)</td>
                                                 <td>Jakarta - Surabaya</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-secondary text-uppercase fw-bold">Rute penerbangan</td>
+                                                <td class="text-secondary text-uppercase fw-bold">Rute penerbangan (Bandara)</td>
                                                 <td>Soekarno Hatta - Juanda</td>
                                             </tr>
                                             <tr>
@@ -77,29 +80,29 @@
 
                                 <div class="tab">
                                     <h2 class="heading mb-3 text-center">My Flight Status</h2>
-                                    <h6 class="sub-heading mb-4 text-muted text-center">Your flight data information</h6>
+                                    <h6 class="sub-heading mb-4 text-center text-capitalize">Your flight plan timeline</h6>
 
                                     <table class="table">
                                         <tbody>
                                             <tr>
                                                 <td class="text-secondary text-uppercase fw-bold">Check in</td>
-                                                <td>: 00:00 - 00:00</td>
+                                                <td>: 07:45 - 08:00</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-secondary text-uppercase fw-bold">Boarding</td>
-                                                <td>: 00:00</td>
+                                                <td>: 08:15 - 08:30</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-secondary text-uppercase fw-bold">Take Off</td>
-                                                <td>: 00:00</td>
+                                                <td>: 09:00</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-secondary text-uppercase fw-bold">On Flight</td>
-                                                <td>: 00:00</td>
+                                                <td>: 09:10</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-secondary text-uppercase fw-bold">Landing</td>
-                                                <td>: 00:00</td>
+                                                <td>: 09:45</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -107,103 +110,164 @@
 
                                 <div class="tab">
                                     <h2 class="heading mb-3 text-center">My Flight Status</h2>
-                                    <h6 class="sub-heading mb-4 text-muted text-center text-capitalize">Your flight plan timeline</h6>
+
+                                    <span>Hi,</span>
+                                    <h4>Miss John</h4>
+                                    <h6 class="sub-tittle mb-4 text-muted text-center">You can check your flight status now</h6>
+                                    <hr />
 
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td>Check in</td>
-                                                <td>: 00:00 - 00:00</td>
-                                                <td>00:00</td>
+                                                <td class="text-secondary text-capitalize fw-bold">Flight number</td>
+                                                <td>123456</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-secondary text-capitalize fw-bold">route</td>
+                                                <td>Soekarno - Juanda</td>
                                             </tr>
                                             <tr>
-                                                <td>Boarding</td>
-                                                <td>: 00:00 - 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Take Off</td>
-                                                <td>: 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>On Flight</td>
-                                                <td>: 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Landing</td>
-                                                <td>: 00:00</td>
+                                                <td class="text-secondary text-capitalize fw-bold">Maskapai</td>
+                                                <td>Lion Air</td>
                                             </tr>
                                         </tbody>
                                     </table>
+
+                                    <!-- STATS FLIGHT -->
+                                    <div class="d-flex gap-1 flex-column">
+                                        <div class="row px-3">
+                                            <div class="col-12">
+                                                <div class="row bg-secondary align-items-center justify-content-center">
+                                                    <div class="col-10">
+                                                        <h5 class="py-2 px-2 mb-0">Prepare</h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-check icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-12">
+                                                <div class="row bg-secondary align-items-center justify-content-center">
+                                                    <div class="col-6">
+                                                        <h5 class="py-2 px-2 mb-0">Check In</h5>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h5>00:00</h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-check icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-12">
+                                                <div class="row bg-secondary align-items-center justify-content-center">
+                                                    <div class="col-6">
+                                                        <h5 class="py-2 px-2 mb-0">Boarding</h5>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h5>00:00</h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-check icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-12">
+                                                <div class="row bg-secondary align-items-center justify-content-center">
+                                                    <div class="col-6">
+                                                        <h5 class="py-2 px-2 mb-0">Take Off</h5>
+                                                    </div>
+
+                                                    <div class="col-4">
+                                                        <h5>00:00</h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-check icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-12">
+                                                <div class="row bg-secondary align-items-center justify-content-center">
+                                                    <div class="col-10">
+                                                        <h5 class="py-2 px-2 mb-0">On Flight</h5>
+                                                    </div>
+
+                                                    <div class="col-2">
+                                                        <i class="bx bx-check icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row px-3">
+                                            <div class="col-12">
+                                                <div class="row bg-secondary align-items-center justify-content-center">
+                                                    <div class="col-6">
+                                                        <h5 class="py-2 px-2 mb-0">Landing</h5>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h5>00:00</h5>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <i class="bx bx-check icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="tab">
-                                    <h2 class="heading mb-3 text-center">My Flight Status</h2>
-                                    <h6 class="sub-heading mb-4 text-muted text-center">Your flight data information</h6>
-
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <td>Check in</td>
-                                                <td>: 00:00 - 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Boarding</td>
-                                                <td>: 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Take Off</td>
-                                                <td>: 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>On Flight</td>
-                                                <td>: 00:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Landing</td>
-                                                <td>: 00:00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <!-- <div class="tab">
+                                    <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email" /></p>
+                                    <p>
+                                        Exp Month
+                                        <select id="month">
+                                            <option value="1">January</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                    </p>
+                                    <p>
+                                        Exp Year
+                                        <select id="year">
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                        </select>
+                                    </p>
+                                    <p><input placeholder="CVV" oninput="this.className = ''" name="phone" /></p>
+                                </div> -->
 
                                 <div class="mt-4" id="nextprevious">
-                                    <div class="d-flex justify-content-between">
-                                        <button class="btn btn-primary" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                        <button class="btn btn-primary" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                    <div class="">
+                                        <button class="btn btn-outline-primary float-start" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                        <button class="btn btn-primary float-end" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="tab">
-                            <p><input placeholder="Credit Card #" oninput="this.className = ''" name="email" /></p>
-                            <p>
-                                Exp Month
-                                <select id="month">
-                                    <option value="1">January</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select>
-                            </p>
-                            <p>
-                                Exp Year
-                                <select id="year">
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                </select>
-                            </p>
-                            <p><input placeholder="CVV" oninput="this.className = ''" name="phone" /></p>
                         </div>
                     </div>
                 </div>
