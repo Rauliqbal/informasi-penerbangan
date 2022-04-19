@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- BOOTSTRAP 5  -->
+      <link rel="stylesheet" href="/assets/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+      <!-- STYLE CSS -->
+      <link rel="stylesheet" href="/css/style.css" />
+
+      <!-- FONT AWESOME  -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+      <!-- GOOGLE FONTS:POPPINS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+      <title>Admin - Informasi Penerbangan</title>
+   </head>
+   <body>
+      <!-- REGISTER/LOGIN -->
+      <div class="container-fluid">
+         <div class="row vh-100 align-items-center">
+            <div class="col-12 col-lg-6 order-last py-5 py-lg-0">
+               <div class="container d-flex justify-content-center">
+                  <div class="col-12 col-lg-8">
+                     <div class="d-flex flex-column">
+                        <h1 class="heading mb-3 fw-bold">Sign up Admin</h1>
+                        <h2 class="sub-heading mb-4">Sign up as Admin</h2>
+                     </div>
+
+                     <!-- FORM -->
+                     <form class="mt-4 needs-validation" novalidate>
+                        <div class="mb-3">
+                           <label for="Name" class="form-label">Name</label>
+                           <input type="Name" class="form-control" id="Name" aria-describedby="emailHelp" required />
+                           <div class="invalid-feedback">Please enter your name</div>
+                        </div>
+                        <div class="mb-3">
+                           <label for="userName" class="form-label">Username</label>
+                           <input type="username" class="form-control" id="userName" aria-describedby="emailHelp" required />
+                           <div class="invalid-feedback">Please enter username</div>
+                        </div>
+                        <div class="mb-3">
+                           <label for="password" class="form-label">Password</label>
+                           <div class="input-group mb-3">
+                              <input id="password" type="password" class="form-control" required />
+                              <button class="btn border rounded-end" type="button">
+                                 <h6 toggle="#password" class="fa fa-eye fa-lg show-hide"></h6>
+                              </button>
+                              <div class="invalid-feedback">Please enter password</div>
+                           </div>
+                        </div>
+                        <div class="mb-2">
+                           <label for="confirmPassword" class="form-label">Confirm Password</label>
+                           <div class="input-group">
+                              <input type="confirmPassword" class="form-control" id="confirmPassword" required />
+                              <button class="btn border rounded-end" type="button">
+                                 <h6 toggle="#confirmPassword" class="fa fa-eye fa-lg show-hide"></h6>
+                              </button>
+                           </div>
+                           <div class="form-text confirm-message"></div>
+                        </div>
+
+                        <span> have account? <a href="../admin.html">login now</a> </span>
+
+                        <div class="my-4 form-check d-flex align-items-center">
+                           <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="flexCheckDefault" />
+                           <label class="form-check-label" for="flexCheckDefault"> Remember me</label>
+                        </div>
+                        <!-- href="admin-db/index.html" -->
+                        <button type="submit" class="btn btn-primary fw-bold w-100 py- rounded-pill">Sign in</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="image-content col-12 col-lg-6 d-flex align-items-center order-first h-100 bg-purple">
+               <img class="img-fluid" src="/assets/images/admin.svg" alt="admin Informasi Penerbangan" />
+            </div>
+         </div>
+      </div>
+      <!-- BOOTSTRAP JS -->
+      <script src="/admin/script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="/assets/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+      <script>
+         $(".show-hide").click(function () {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+               input.attr("type", "text");
+            } else {
+               input.attr("type", "password");
+            }
+         });
+      </script>
+      <script>
+         $("#password, #confirmPassword").on("keyup", function () {
+            $(".confirm-message").removeClass("text-success").removeClass("text-danger");
+
+            let password = $("#password").val();
+            let confirm_password = $("#confirmPassword").val();
+
+            if (password === "") {
+               $(".confirm-message").text("Password Field cannot be empty").addClass("text-danger");
+            } else if (confirm_password === "") {
+               $(".confirm-message").text("Confirm Password Field cannot be empty").addClass("text-danger");
+            } else if (confirm_password === password) {
+               $(".confirm-message").text("Password Match!").addClass("text-success");
+            } else {
+               $(".confirm-message").text("Password Doesn't Match!").addClass("text-danger");
+            }
+         });
+      </script>
+   </body>
+</html>
